@@ -1,5 +1,5 @@
 # approval-thing
-A simple CRUD app that saves 'applications' into a MySQL database that are submitted from React using Rest. This project is meant to demonstrate how to handle state in React where the client's state is the source of truth for component-rendering.  Versus other anti-patterns such as fetching after POST/PUT/PATCH request.
+A simple CRUD app that saves 'applications' into a MySQL database that are submitted from React using REST. This project is meant to demonstrate how to handle state in React where the client's state is the source of truth for component-rendering.  Versus other anti-patterns such as fetching after POST/PUT/PATCH request.
 
 ### How to run:
 
