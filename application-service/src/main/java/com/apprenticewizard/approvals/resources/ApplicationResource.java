@@ -1,26 +1,30 @@
 package com.apprenticewizard.approvals.resources;
 
 import com.apprenticewizard.approvals.models.Application;
+import com.apprenticewizard.approvals.services.ApplicationService;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.inject.Inject;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Collection;
 
 @Path("/applications")
 @Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class ApplicationResource {
 
+    @Inject
+    private ApplicationService applicationService;
+
     @GET
-    public Set<Application> getApplications() {
-       return new HashSet<>(Arrays.asList(
-               new Application("Fred", 600),
-               new Application("Jane", 760),
-               new Application("Jim", 450),
-               new Application("Samantha", 850)
-       ));
+    public Collection<Application> getApplications() throws InterruptedException {
+        Thread.sleep(800);
+        return applicationService.findAll();
+    }
+
+    @POST
+    public void create(Application application) throws InterruptedException {
+        Thread.sleep(500);
+        applicationService.create(application);
     }
 }
