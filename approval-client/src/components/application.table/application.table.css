@@ -1,0 +1,14 @@
+h2 {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    width: 100%;
+    padding: 1%;
+}
+
+table {
+    width: 20%;
+    padding: 1%;
+}
+
+th {
+    text-align: left;
+}

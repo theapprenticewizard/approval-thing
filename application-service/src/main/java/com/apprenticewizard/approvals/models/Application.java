@@ -12,16 +12,16 @@ public class Application {
     /**
      * Represents the applicant's credit score for the loan amount.
      */
-    private int creditScore;
+    private int score;
 
     /**
      * The default way to create a new Application.
      * @param name the name of the contact
-     * @param creditScore the credit score of the contact
+     * @param score the credit score of the contact
      */
-    public Application(String name, int creditScore) {
+    public Application(String name, int score) {
         this.name = name;
-        this.creditScore = creditScore;
+        this.score = score;
     }
 
     public String getName() {
@@ -32,12 +32,12 @@ public class Application {
         this.name = name;
     }
 
-    public int getCreditScore() {
-        return creditScore;
+    public int getScore() {
+        return score;
     }
 
-    public void setCreditScore(int creditScore) {
-        this.creditScore = creditScore;
+    public void setScore(int score) {
+        this.score = score;
     }
 
 
@@ -46,20 +46,20 @@ public class Application {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Application that = (Application) o;
-        return creditScore == that.creditScore &&
+        return score == that.score &&
                 Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, creditScore);
+        return Objects.hash(name, score);
     }
 
     @Override
     public String toString() {
         return "Application{" +
                 "name='" + name + '\'' +
-                ", creditScore=" + creditScore +
+                ", creditScore=" + score +
                 '}';
     }
 }
